@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #e3e3e3;
+            overflow: auto; /* Allow scrolling when content overflows */
+            flex-direction: column;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%; /* Full height to ensure sidebar is always visible */
+        }
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Aligns the content vertically */
+            height: 100vh; /* Sidebar takes full height */
+            overflow-y: auto; /* Ensure the sidebar has its own scroll */
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 120px; /* Adjust size of the profile picture */
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .logo h3 {
+            margin-top: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Ensures menu items are stacked vertically */
+            align-items: center; /* Center-aligns the items */
+        }
+        nav ul li {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: block;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            transform: scale(1.1);
+            font-weight: bold;
+        }
+        .content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+            overflow-y: auto; /* Enable scrolling in content if it's long */
+        }
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px; /* Rounded corners for profile picture */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+            opacity: 1;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #4e4376;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="profile.jpg" alt="Profile Picture"> <!-- Add your profile image here -->
+                <h3>Alimi Mousaad</h3> <!-- Add your name here -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a onclick="showSection('home')">🏠 Home</a></li>
+                    <li><a onclick="showSection('about')">👤 About</a></li>
+                    <li><a onclick="showSection('experience')">📜 Experience</a></li>
+                    <li><a onclick="showSection('education')">🎓 Education</a></li>
+                    <li><a onclick="showSection('skills')">💡 Skills</a></li>
+                    <li><a onclick="showSection('projects')">📁 Projects</a></li>
+                    <li><a onclick="showSection('contact')">📞 Contact</a></li> <!-- Added Contact field -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div id="home" class="section active">
+                <h1>Hello, I'm <span class="highlight">Alimi Mousaad</span></h1>
+                <h2>Professional Web Designer</h2>
+                <p>Over 10 years of experience in web and graphic design.</p>
+                <!-- Removed the profile picture here -->
+            </div>
+
+            <div id="about" class="section">
+                <h1>About Me</h1>
+                <p>A passionate designer with expertise in modern web technologies.</p>
+            </div>
+
+            <div id="experience" class="section">
+                <h1>Experience</h1>
+                <p>10+ years of professional experience in the industry.</p>
+            </div>
+
+            <div id="education" class="section">
+                <h1>Education</h1>
+                <p>Bachelor's in Computer Science.</p>
+            </div>
+
+            <div id="skills" class="section">
+                <h1>Skills</h1>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React, Angular</li>
+                    <li>Graphic Design</li>
+                    <li>UI/UX Design</li>
+                </ul>
+            </div>
+
+            <div id="projects" class="section">
+                <h1>Projects</h1>
+                <p>Portfolio of various successful projects.</p>
+            </div>
+
+            <div id="contact" class="section">
+                <h1>Contact</h1>
+                <p>Email: alimi@example.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://facebook.com/yourprofile" target="_blank">
+                <img src="images\facebook.jpg" alt="Facebook"> <!-- Replace with actual Facebook icon image -->
+            </a>
+            <a href="mailto:yourname@gmail.com" target="_blank">
+                <img src="gmail-icon.png" alt="Gmail"> <!-- Replace with actual Gmail icon image -->
+            </a>
+            <a href="https://github.com/yourprofile" target="_blank">
+                <img src="images\git.png" alt="GitHub"> <!-- Replace with actual GitHub icon image -->
+            </a>
+            <a href="https://x.com/yourprofile" target="_blank">
+                <img src="x-icon.png" alt="X"> <!-- Replace with actual X (Twitter) icon image -->
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <img src="images.jpg" alt="LinkedIn"> <!-- Replace with actual LinkedIn icon image -->
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            setTimeout(() => {
+                document.getElementById(sectionId).classList.add('active');
+            }, 300);
+        }
+    </script>
+</body>
+</html>

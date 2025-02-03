@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #e3e3e3;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Aligns the content vertically */
+            height: 100vh; /* Ensures the sidebar takes the full height */
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Ensures menu items are stacked vertically */
+            align-items: center; /* Center-aligns the items */
+        }
+        nav ul li {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: block;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            transform: scale(1.1);
+            font-weight: bold;
+        }
+        .content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+        }
+        .profile img {
+            width: 180px;
+            border-radius: 50%;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2 class="logo">My Resume</h2>
+            <nav>
+                <ul>
+                    <li><a onclick="showSection('home')">🏠 Home</a></li>
+                    <li><a onclick="showSection('about')">👤 About</a></li>
+                    <li><a onclick="showSection('experience')">📜 Experience</a></li>
+                    <li><a onclick="showSection('education')">🎓 Education</a></li>
+                    <li><a onclick="showSection('skills')">💡 Skills</a></li>
+                    <li><a onclick="showSection('projects')">📁 Projects</a></li>
+                    <li><a onclick="showSection('contact')">📞 Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div id="home" class="section active">
+                <h1>Hello, I'm <span class="highlight">Alimi Mousaad</span></h1>
+                <h2>Professional Web Designer</h2>
+                <p>Over 10 years of experience in web and graphic design.</p>
+                <div class="profile">
+                    <img src="profile.jpg" alt="Profile Picture">
+                </div>
+            </div>
+
+            <div id="about" class="section">
+                <h1>About Me</h1>
+                <p>A passionate designer with expertise in modern web technologies.</p>
+            </div>
+
+            <div id="experience" class="section">
+                <h1>Experience</h1>
+                <p>10+ years of professional experience in the industry.</p>
+            </div>
+
+            <div id="education" class="section">
+                <h1>Education</h1>
+                <p>Bachelor's in Computer Science.</p>
+            </div>
+
+            <div id="skills" class="section">
+                <h1>Skills</h1>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React, Angular</li>
+                    <li>Graphic Design</li>
+                    <li>UI/UX Design</li>
+                </ul>
+            </div>
+
+            <div id="projects" class="section">
+                <h1>Projects</h1>
+                <p>Portfolio of various successful projects.</p>
+            </div>
+
+            <div id="contact" class="section">
+                <h1>Contact</h1>
+                <p>Email: alimi@example.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            setTimeout(() => {
+                document.getElementById(sectionId).classList.add('active');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
